@@ -1,0 +1,26 @@
+{
+  "name": "crud_stickers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon",
+    "test": "(echo DROP DATABASE stickerstest | psql -h localhost -U postgres) && (echo CREATE DATABASE stickerstest | psql -h localhost -U postgres) && cross-env NODE_ENV=test mocha"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "knex": "^0.95.11",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.13",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "superest": "^0.6.0"
+  }
+}
