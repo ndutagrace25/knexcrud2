@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
   queries.getAll({ title }).then(stickers => {
     res.json(stickers);
   })
+  // res.send('It worked!!')
 })
 
 router.get('/:id', isValidId, (req, res, next) => {
