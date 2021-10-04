@@ -1,6 +1,5 @@
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -24,6 +23,12 @@ app.use('/api/stickers', stickers);
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+})
 
 // error handler
 app.use(function (err, req, res, next) {
